@@ -9,8 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SmileyFace : UIView
-
+@interface SmileyFace : UIView {
+    UIColor * _eyeColor;
+}
 @end
 
 NS_ASSUME_NONNULL_END
