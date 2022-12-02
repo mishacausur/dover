@@ -56,7 +56,52 @@
     CGContextAddEllipseInRect(context, eyeRect);
     CGContextDrawPath(context, kCGPathFillStroke);
     
+    CGContextSetLineWidth(context, 2.0f);
+    CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    
+    CGMutablePathRef mouthPath = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(mouthPath,
+                      &CGAffineTransformIdentity,
+                      centerPoint.x+0.7f*smileRadius*cos(-165.0/180.0*M_PI),
+                      centerPoint.y+0.7f*smileRadius*sin(-345.0/180.0*M_PI));
+    CGPathAddLineToPoint(mouthPath,
+                         &CGAffineTransformIdentity,
+                         centerPoint.x+0.7f*smileRadius*cos(-15.0/180.0*M_PI),
+                         centerPoint.y+0.7f*smileRadius*sin(-195.0/180.0*M_PI));
+    CGPathAddArc(mouthPath,
+                 &CGAffineTransformIdentity,
+                 centerPoint.x,
+                 centerPoint.y,
+                 0.7f*smileRadius,
+                 -195.0/180.0*M_PI,
+                 -345.0/180.0*M_PI,
+                 1);
+    CGPathCloseSubpath(mouthPath);
+    CGContextSaveGState(context);
+    CGContextAddPath(context, mouthPath);
+    CGContextClip(context);
+    CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+    CGFloat colorComponents[] =  {1.0f, 0.0f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f, 1.0f};
+    CGFloat locations[] = {0.0, 1.0};
+    CGGradientRef myGradient = CGGradientCreateWithColorComponents(rgb,
+                                                                   colorComponents,
+                                                                   locations,
+                                                                   2);
+    CGPoint startPoint = centerPoint;
+    startPoint.y -= 0.7*smileRadius*sin(-15.0/180.0*M_PI);
+    CGPoint endPoint = centerPoint;
+    endPoint.y += 0.7*smileRadius;
+    CGContextDrawLinearGradient(context,
+                                myGradient,
+                                startPoint,
+                                endPoint,
+                                kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     CGContextRestoreGState(context);
+    CGContextAddPath(context, mouthPath);
+    CGContextDrawPath(context, kCGPathStroke);
+    
 }
 
 @end
