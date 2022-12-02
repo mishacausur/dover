@@ -13,6 +13,7 @@
 		C6259AF1293A33A60054DACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6259AF0293A33A60054DACF /* Assets.xcassets */; };
 		C6259AF4293A33A60054DACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6259AF2293A33A60054DACF /* LaunchScreen.storyboard */; };
 		C6259AF7293A33A60054DACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6259AF6293A33A60054DACF /* main.m */; };
+		C6259B00293A37B20054DACF /* SmileyFace.m in Sources */ = {isa = PBXBuildFile; fileRef = C6259AFF293A37B20054DACF /* SmileyFace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		C6259AF3293A33A60054DACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6259AF5293A33A60054DACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6259AF6293A33A60054DACF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C6259AFE293A37B20054DACF /* SmileyFace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmileyFace.h; sourceTree = "<group>"; };
+		C6259AFF293A37B20054DACF /* SmileyFace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmileyFace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		C6259AE3293A33A40054DACF /* dover */ = {
 			isa = PBXGroup;
 			children = (
+				C6259AFD293A377D0054DACF /* Views */,
 				C6259AE4293A33A40054DACF /* AppDelegate.h */,
 				C6259AE5293A33A40054DACF /* AppDelegate.m */,
 				C6259AE7293A33A40054DACF /* SceneDelegate.h */,
@@ -71,6 +75,15 @@
 				C6259AF6293A33A60054DACF /* main.m */,
 			);
 			path = dover;
+			sourceTree = "<group>";
+		};
+		C6259AFD293A377D0054DACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6259AFE293A37B20054DACF /* SmileyFace.h */,
+				C6259AFF293A37B20054DACF /* SmileyFace.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +157,7 @@
 			files = (
 				C6259AEC293A33A40054DACF /* ViewController.m in Sources */,
 				C6259AE6293A33A40054DACF /* AppDelegate.m in Sources */,
+				C6259B00293A37B20054DACF /* SmileyFace.m in Sources */,
 				C6259AF7293A33A60054DACF /* main.m in Sources */,
 				C6259AE9293A33A40054DACF /* SceneDelegate.m in Sources */,
 			);
